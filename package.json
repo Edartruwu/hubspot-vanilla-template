@@ -1,0 +1,31 @@
+{
+  "name": "hubspot-vanilla-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:hs": "node scripts/build-hs.js",
+    "deploy": "npm run build && hs upload dist custom-modules",
+    "tailwind:dev": "npx @tailwindcss/cli -i ./src/style.css -o ./public/style.css --watch",
+    "dev:all": "concurrently \"npm run dev\" \"npm run tailwind:dev\"",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.9",
+    "@tailwindcss/postcss": "^4.0.9",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^22.13.9",
+    "concurrently": "^9.1.2",
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.1",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.9"
+  }
+}

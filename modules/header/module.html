@@ -1,0 +1,21 @@
+<header class="bg-blue-600 text-white p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="flex items-center">
+      <img
+        src="{{ module.logo_url }}"
+        alt="{{ module.company_name }}"
+        class="h-10 mr-3"
+      />
+      <h1 class="text-xl font-bold">{{ module.company_name }}</h1>
+    </div>
+    <nav>
+      <ul class="flex space-x-6">
+        {% for item in module.navigation_items %}
+        <li>
+          <a href="{{ item.url }}" class="hover:underline">{{ item.label }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
