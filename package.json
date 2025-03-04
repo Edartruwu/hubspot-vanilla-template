@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build:hs": "node scripts/build-hs.js",
-    "deploy": "npm run build && hs upload dist custom-modules",
+    "deploy": "npm run build:hs && hs upload dist hs-dist",
     "tailwind:dev": "npx @tailwindcss/cli -i ./src/style.css -o ./public/style.css --watch",
     "dev:all": "concurrently \"npm run dev\" \"npm run tailwind:dev\"",
     "preview": "vite preview"
